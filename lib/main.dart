@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hitbox_main/navigator/bottomnavigator.dart';
+import 'package:hitbox_main/navigator/MainBottomNavigator.dart';
 
 void main() => runApp(const App());
 
@@ -10,7 +10,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavigation(),
+      home: MainBottomNavigator(),
     );
   }
 }

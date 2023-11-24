@@ -3,14 +3,14 @@ import 'package:hitbox_main/screens/explorescreen.dart';
 import 'package:hitbox_main/screens/homescreen.dart';
 
 // Beispielcode für das BottomNavigation Widget
-class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+class MainBottomNavigator extends StatefulWidget {
+  const MainBottomNavigator({super.key});
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
+  State<MainBottomNavigator> createState() => _MainBottomNavigatorState();
 }
 
-class _BottomNavigationState extends State<BottomNavigation> {
+class _MainBottomNavigatorState extends State<MainBottomNavigator> {
   // der derzeit ausgewählte Index
   int _selectedIndex = 0;
   // Eine Liste mit Widgets, welche von der BottomNavigation angezeigt werden können.
