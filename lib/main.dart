@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hitbox_main/screens/explorescreen.dart';
+import 'package:hitbox_main/screens/homescreen.dart';
 
 void main() => runApp(const App());
 
@@ -8,31 +10,21 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: BottomNavigationExample(),
+      debugShowCheckedModeBanner: false,
+      home: BottomNavigation(),
     );
   }
 }
 
-// Ein Widget, dass später in der BottomNavigation benutzt wird
-class HomeScreenWidget extends StatelessWidget {
-  const HomeScreenWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text("This is the HomeScreen Widget");
-  }
-}
-
 // Beispielcode für das BottomNavigation Widget
-class BottomNavigationExample extends StatefulWidget {
-  const BottomNavigationExample({super.key});
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({super.key});
 
   @override
-  State<BottomNavigationExample> createState() =>
-      _BottomNavigationExampleState();
+  State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
-class _BottomNavigationExampleState extends State<BottomNavigationExample> {
+class _BottomNavigationState extends State<BottomNavigation> {
   // der derzeit ausgewählte Index
   int _selectedIndex = 0;
   // Eine Liste mit Widgets, welche von der BottomNavigation angezeigt werden können.
@@ -40,9 +32,10 @@ class _BottomNavigationExampleState extends State<BottomNavigationExample> {
     // Hier ist wieder unser eben deklariertes Widget
     HomeScreenWidget(),
     // Ein weiteres Widget, welches nicht extern erstellt wurde
-    Text("Widget 2"),
+    ExploreScreenWidget(),
     // Noch ein Widget
     Text("Widget 3"),
+    Text("Widget 4"),
   ];
   // Die funktion welche bei onTap aufgerufen wird (sehr ähnlich zu dem Counter
   // Standart Flutter App welchen wir neulich besprochen haben.)
@@ -55,11 +48,7 @@ class _BottomNavigationExampleState extends State<BottomNavigationExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // App Bar einstellungen
-      appBar: AppBar(
-        title: const Text("Bottom Nav Example"),
-        backgroundColor: Colors.deepOrange,
-      ),
+      backgroundColor: Colors.black,
       // Zeige den Body in der Mitte Zentriert an
       body: Center(
         // _widgetoptions ist die eben erstelle Liste mit Widgets
@@ -69,6 +58,8 @@ class _BottomNavigationExampleState extends State<BottomNavigationExample> {
       ),
       // Das Hauptwidget der BottomNavigation Bar
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
         // Die Verschiedenen Schaltflächen in der Bar
         // Hier könnte man auch noch weitere hinzufügen.
         items: const <BottomNavigationBarItem>[
@@ -79,7 +70,11 @@ class _BottomNavigationExampleState extends State<BottomNavigationExample> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_tree_outlined),
-            label: 'Code',
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit),
+            label: '4',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_2_outlined),
@@ -89,7 +84,7 @@ class _BottomNavigationExampleState extends State<BottomNavigationExample> {
         //Der derzeitige Index für die Ausgewählte Schaltfläche (welche von uns mit
         // der _onItemTapped gesteuert wird)
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.deepOrange,
+        selectedItemColor: Colors.red,
         // bei der onTap Methode rufen wir unsere Methode auf um den Index zu steuern.
         onTap: _onItemTapped,
       ),
