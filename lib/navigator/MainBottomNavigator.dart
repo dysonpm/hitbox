@@ -51,19 +51,19 @@ class _MainBottomNavigatorState extends State<MainBottomNavigator> {
         items: const <BottomNavigationBarItem>[
           // Jede Schaltfläche in der Bar ist ein "BottomNavigationBarItem"
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.apps),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_tree_outlined),
+            icon: Icon(Icons.search),
             label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.ac_unit),
-            label: '4',
+            icon: Icon(Icons.bar_chart_sharp),
+            label: 'Analyse',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_2_outlined),
+            icon: Icon(Icons.person),
             label: 'Info',
           ),
         ],

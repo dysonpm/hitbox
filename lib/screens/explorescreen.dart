@@ -10,7 +10,7 @@ class ExploreScreenWidget extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey,
       ),
-      body: Text("grey"),
+      body: Center(child: Text("grey")),
       backgroundColor: Colors.white,
     );
   }
