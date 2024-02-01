@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hitbox_main/widgets/app_large_text.dart';
 
-// Ein Widget, dass später in der BottomNavigation benutzt wird
 class HomeScreenWidget extends StatelessWidget {
   const HomeScreenWidget({super.key});
 
