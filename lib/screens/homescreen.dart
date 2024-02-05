@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hitbox_main/widgets/app.text.dart';
 import 'package:hitbox_main/widgets/app_large_text.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           Container(
             margin: const EdgeInsets.only(left: 20),
-            child: AppLargeText(text: 'Popular Workouts'),
+            child: AppLargeText(text: 'Discover'),
           ),
           SizedBox(
             height: 30,
@@ -69,26 +70,60 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ),
           Container(
+            padding: const EdgeInsets.only(left: 20),
             height: 300,
             width: double.maxFinite,
             child: TabBarView(
               controller: _tabController,
               children: [
-                Container(
-                  width: 200,
-                  height: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    image: DecorationImage(
-                        image: AssetImage("img/boxing.jpg"), fit: BoxFit.cover),
-                  ),
+                ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: const EdgeInsets.only(
+                        right: 15,
+                        top: 10,
+                      ),
+                      width: 200,
+                      height: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        image: DecorationImage(
+                            image: AssetImage("img/boxing-1.jpg"),
+                            fit: BoxFit.cover),
+                      ),
+                    );
+                  },
                 ),
-                Text("There"),
-                Text("By")
+                Text("2"),
+                Text("3"),
               ],
             ),
           ),
+          SizedBox(
+            height: 50,
+          ),
+          Container(
+            margin: const EdgeInsets.only(
+              left: 20,
+              right: 20,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(
+                  text: 'Explore more',
+                  size: 22,
+                ),
+                AppText(
+                  text: 'See all',
+                  color: Colors.red,
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

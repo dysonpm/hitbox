@@ -17,3 +17,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - img/boxing-1.jpg
+    - img/boxing-2.jpg
+    - img/boxing-3.jpg
+    - img/boxing-4.jpg
+    - img/boxing-5.jpg
+    - img/boxing-6.jpg
+    - img/boxing-7.jpg
+
