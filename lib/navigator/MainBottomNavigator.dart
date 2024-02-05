@@ -16,7 +16,7 @@ class _MainBottomNavigatorState extends State<MainBottomNavigator> {
   // Eine Liste mit Widgets, welche von der BottomNavigation angezeigt werden können.
   static const List<Widget> _widgetOptions = <Widget>[
     // Hier ist wieder unser eben deklariertes Widget
-    HomeScreenWidget(),
+    HomeScreen(),
     // Ein weiteres Widget, welches nicht extern erstellt wurde
     ExploreScreenWidget(),
     // Noch ein Widget
