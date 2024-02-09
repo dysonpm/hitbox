@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hitbox_main/pages/explorescreen.dart';
-import 'package:hitbox_main/pages/homescreen.dart';
+import 'package:hitbox_main/screens/navscreens/analysisscreen.dart';
+import 'package:hitbox_main/screens/navscreens/explorescreen.dart';
+import 'package:hitbox_main/screens/homescreen.dart';
+import 'package:hitbox_main/screens/navscreens/profilscreen.dart';
 
 // Beispielcode für das BottomNavigation Widget
 class MainBottomNavigator extends StatefulWidget {
@@ -20,8 +22,8 @@ class _MainBottomNavigatorState extends State<MainBottomNavigator> {
     // Ein weiteres Widget, welches nicht extern erstellt wurde
     ExploreScreenWidget(),
     // Noch ein Widget
-    Text("Widget 3"),
-    Text("Widget 4"),
+    AnalysisScreenWidget(),
+    ProfilScreenWidget(),
   ];
   // Die funktion welche bei onTap aufgerufen wird (sehr ähnlich zu dem Counter
   // Standart Flutter App welchen wir neulich besprochen haben.)

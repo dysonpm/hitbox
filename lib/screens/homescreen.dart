@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hitbox_main/widgets/app.text.dart';
-import 'package:hitbox_main/widgets/app_large_text.dart';
+import 'package:hitbox_main/widgets/Text/app.text.dart';
+import 'package:hitbox_main/widgets/Text/app_large_text.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

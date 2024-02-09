@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // Ein Widget, dass später in der BottomNavigation benutzt wird
-class ExploreScreenWidget extends StatelessWidget {
-  const ExploreScreenWidget({super.key});
+class AnalysisScreenWidget extends StatelessWidget {
+  const AnalysisScreenWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class ExploreScreenWidget extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey,
       ),
-      body: Center(child: Text("grey")),
+      body: Center(child: Text("analysis")),
       backgroundColor: Colors.white,
     );
   }
