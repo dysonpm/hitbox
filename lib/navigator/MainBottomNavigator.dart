@@ -70,7 +70,7 @@ class _MainBottomNavigatorState extends State<MainBottomNavigator> {
         //Der derzeitige Index für die Ausgewählte Schaltfläche (welche von uns mit
         // der _onItemTapped gesteuert wird)
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red,
+        selectedItemColor: Colors.black,
         // bei der onTap Methode rufen wir unsere Methode auf um den Index zu steuern.
         onTap: _onItemTapped,
       ),

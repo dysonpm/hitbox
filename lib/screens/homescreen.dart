@@ -10,6 +10,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  var images = {
+    'flexibility.jpg': 'Flexibility',
+    'power.jpg': 'Power',
+    'sprint.jpg': 'Conditoning',
+    'techniques.jpg': 'Technique'
+  };
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -41,14 +47,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ]),
           ),
           SizedBox(
-            height: 40,
+            height: 30,
           ),
           Container(
             margin: const EdgeInsets.only(left: 20),
             child: AppLargeText(text: 'Discover'),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           // Tabbar
           Container(
@@ -61,13 +67,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   unselectedLabelColor: Colors.grey,
                   isScrollable: true,
                   indicatorSize: TabBarIndicatorSize.label,
-                  indicator: CircleTabIndicator(color: Colors.red, radius: 4),
+                  indicator: CircleTabIndicator(color: Colors.black, radius: 4),
                   tabs: [
                     Tab(text: "Beginner"),
                     Tab(text: "Intermediate"),
                     Tab(text: "Advanced"),
                   ]),
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Container(
             padding: const EdgeInsets.only(left: 20),
@@ -88,10 +97,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       width: 200,
                       height: 300,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                         image: DecorationImage(
-                            image: AssetImage("img/boxing-1.jpg"),
+                            image: AssetImage("img/boxing-jab.png"),
                             fit: BoxFit.cover),
                       ),
                     );
@@ -119,11 +128,50 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ),
                 AppText(
                   text: 'See all',
-                  color: Colors.red,
+                  color: Colors.grey,
                 )
               ],
             ),
-          )
+          ),
+          SizedBox(height: 30),
+          Container(
+            height: 120,
+            width: double.maxFinite,
+            margin: const EdgeInsets.only(left: 20),
+            child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return Container(
+                    margin: const EdgeInsets.only(right: 30),
+                    child: Column(
+                      children: [
+                        Container(
+                          // margin: const EdgeInsets.only(right: 50),
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'img/' + images.keys.elementAt(index)),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Container(
+                          child: AppText(
+                            text: images.values.elementAt(index),
+                            color: Colors.black,
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                }),
+          ),
         ],
       ),
     );
