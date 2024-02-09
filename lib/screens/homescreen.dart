@@ -11,10 +11,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   var images = {
-    'flexibility.jpg': 'Flexibility',
-    'power.jpg': 'Power',
-    'sprint.jpg': 'Conditoning',
-    'techniques.jpg': 'Technique'
+    'flexibility.png': 'Flexibility',
+    'power.png': 'Power',
+    'sprint.png': 'Conditoning',
+    'technique.png': 'Technique'
   };
   @override
   Widget build(BuildContext context) {
@@ -151,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           width: 80,
                           height: 80,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(10),
                               color: Colors.white,
                               image: DecorationImage(
                                   image: AssetImage(
