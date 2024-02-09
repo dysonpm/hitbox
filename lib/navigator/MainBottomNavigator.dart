@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hitbox_main/screens/explorescreen.dart';
-import 'package:hitbox_main/screens/homescreen.dart';
+import 'package:hitbox_main/pages/explorescreen.dart';
+import 'package:hitbox_main/pages/homescreen.dart';
 
 // Beispielcode für das BottomNavigation Widget
 class MainBottomNavigator extends StatefulWidget {
