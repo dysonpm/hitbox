@@ -9,26 +9,39 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.3.7
+  smooth_page_indicator: ^1.1.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
 
+flutter_native_splash:
+  color: '#FFFFFF'
+  color_dark: '#272727'
+  image: img/logos/logo_wht.png
+  image_dark: img/logos/logo_blk.png
+
 flutter:
   uses-material-design: true
   assets:
-    - img/boxing-1.jpg
-    - img/boxing-2.jpg
-    - img/boxing-3.jpg
-    - img/boxing-4.jpg
-    - img/boxing-5.jpg
-    - img/boxing-6.jpg
-    - img/boxing-7.jpg
+    - img/boxing-basics-1.png
+    - img/boxing-basics-2.png
+    - img/boxing-basics-3.png
     - img/flexibility.png
     - img/power.png
     - img/sprint.png
     - img/technique.png
-    - img/boxing-jab.png
+    - img/profil/profilpic.jpg
+    - img/footwork_basics_1.png
+    - img/combo_basics_1.png
+    - img/welcome_one.png
+    - img/welcome_two.png
+    - img/welcome_three.png
+    - img/card-box-basics-1.png
+    - img/card-box-basics-2.png
+
 
 

@@ -46,6 +46,7 @@ class _MainBottomNavigatorState extends State<MainBottomNavigator> {
       ),
       // Das Hauptwidget der BottomNavigation Bar
       bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: false,
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         // Die Verschiedenen Schaltflächen in der Bar

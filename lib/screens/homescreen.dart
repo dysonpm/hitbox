@@ -10,12 +10,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  var images = {
-    'flexibility.png': 'Flexibility',
-    'power.png': 'Power',
-    'sprint.png': 'Conditoning',
-    'technique.png': 'Technique'
-  };
+  List images = [
+    "card-box-basics-1.png",
+    "card-box-basics-2.png",
+  ];
+
+  List imagesbasics = [
+    "boxing-basics-1.png",
+    "boxing-basics-2.png",
+    "boxing-basics-3.png",
+  ];
+
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -41,13 +46,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 height: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.grey.withOpacity(0.5),
+                  image: DecorationImage(
+                      image: AssetImage("img/profil/profilpic.jpg"),
+                      fit: BoxFit.cover),
                 ),
               ),
             ]),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           Container(
             margin: const EdgeInsets.only(left: 20),
@@ -100,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                         image: DecorationImage(
-                            image: AssetImage("img/boxing-jab.png"),
+                            image: AssetImage("img/" + imagesbasics[index]),
                             fit: BoxFit.cover),
                       ),
                     );
@@ -123,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppLargeText(
-                  text: 'Explore more',
+                  text: 'Recommended for you',
                   size: 22,
                 ),
                 AppText(
@@ -135,11 +142,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           SizedBox(height: 30),
           Container(
-            height: 120,
+            height: 150,
             width: double.maxFinite,
             margin: const EdgeInsets.only(left: 20),
             child: ListView.builder(
-                itemCount: 4,
+                itemCount: 2,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return Container(
@@ -148,25 +155,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       children: [
                         Container(
                           // margin: const EdgeInsets.only(right: 50),
-                          width: 80,
-                          height: 80,
+                          width: 250,
+                          height: 150,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.white,
                               image: DecorationImage(
-                                  image: AssetImage(
-                                      'img/' + images.keys.elementAt(index)),
+                                  image: AssetImage("img/" + images[index]),
                                   fit: BoxFit.cover)),
                         ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Container(
-                          child: AppText(
-                            text: images.values.elementAt(index),
-                            color: Colors.black,
-                          ),
-                        )
                       ],
                     ),
                   );
