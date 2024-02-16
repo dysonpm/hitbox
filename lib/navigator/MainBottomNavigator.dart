@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hitbox_main/screens/navscreens/analysisscreen.dart';
 import 'package:hitbox_main/screens/navscreens/explorescreen.dart';
-import 'package:hitbox_main/screens/homescreen.dart';
+import 'package:hitbox_main/screens/navscreens/homescreen.dart';
 import 'package:hitbox_main/screens/navscreens/profilscreen.dart';
 
 // Beispielcode für das BottomNavigation Widget
@@ -20,7 +20,7 @@ class _MainBottomNavigatorState extends State<MainBottomNavigator> {
     // Hier ist wieder unser eben deklariertes Widget
     HomeScreen(),
     // Ein weiteres Widget, welches nicht extern erstellt wurde
-    ExploreScreenWidget(),
+    ExploreScreen(),
     // Noch ein Widget
     AnalysisScreenWidget(),
     ProfilScreenWidget(),

@@ -34,18 +34,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               left: 20,
             ),
             child: Row(children: [
-              Icon(
-                Icons.menu,
-                size: 30,
-                color: Colors.black,
-              ),
               Expanded(child: Container()),
               Container(
                 margin: const EdgeInsets.only(right: 20),
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(50),
                   image: DecorationImage(
                       image: AssetImage("img/profil/profilpic.jpg"),
                       fit: BoxFit.cover),
@@ -53,15 +48,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             ]),
           ),
-          SizedBox(
-            height: 20,
+          Container(
+            margin: const EdgeInsets.only(left: 20),
+            child: AppLargeText(text: 'Good\nAfternoon'),
           ),
           Container(
             margin: const EdgeInsets.only(left: 20),
-            child: AppLargeText(text: 'Discover'),
+            child: AppLargeText(
+              text: 'Sasuke Uchicha',
+              color: Colors.red,
+            ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           // Tabbar
           Container(
@@ -83,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
             padding: const EdgeInsets.only(left: 20),
@@ -119,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: 25,
           ),
           Container(
             margin: const EdgeInsets.only(
@@ -140,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 25),
           Container(
             height: 150,
             width: double.maxFinite,
@@ -150,12 +149,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return Container(
-                    margin: const EdgeInsets.only(right: 30),
+                    margin: const EdgeInsets.only(right: 20),
                     child: Column(
                       children: [
                         Container(
                           // margin: const EdgeInsets.only(right: 50),
-                          width: 250,
+                          width: 270,
                           height: 150,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppText extends StatelessWidget {
   double size;
@@ -17,9 +18,11 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        color: color,
-        fontSize: size,
+      style: GoogleFonts.spaceGrotesk(
+        textStyle: TextStyle(
+          color: color,
+          fontSize: size,
+        ),
       ),
     );
   }

@@ -4,7 +4,7 @@ import 'package:hitbox_main/introscreens/introscreen1.dart';
 import 'package:hitbox_main/introscreens/introscreen2.dart';
 import 'package:hitbox_main/introscreens/introscreen3.dart';
 import 'package:hitbox_main/navigator/MainBottomNavigator.dart';
-import 'package:hitbox_main/screens/homescreen.dart';
+import 'package:hitbox_main/screens/navscreens/homescreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
