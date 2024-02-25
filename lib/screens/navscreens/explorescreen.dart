@@ -16,7 +16,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     "Comnbinations",
     "Power Punches",
     "Footwork",
-    "Power Punches"
   ];
   @override
   Widget build(BuildContext context) {
@@ -55,7 +54,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
               ),
             ),
           ),
-          SizedBox(height: 15),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: ChipsChoice.single(
@@ -66,16 +64,19 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 value: (i, v) => i,
                 label: (i, v) => v,
               ),
-              choiceStyle: C2ChipStyle(backgroundColor: Colors.red),
+              choiceStyle: const C2ChipStyle(
+                iconColor: Colors.red,
+                backgroundColor: Colors.black,
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
             ),
           ),
-          SizedBox(height: 15),
           Container(
-            height: 550,
+            height: 630,
             width: double.maxFinite,
             margin: const EdgeInsets.only(left: 20),
             child: ListView.builder(
-                itemCount: 1,
+                itemCount: 4,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (_, index) {
                   return Container(
@@ -86,8 +87,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       children: [
                         Container(
                           // margin: const EdgeInsets.only(right: 50),
-                          width: 270,
-                          height: 150,
+                          width: 390,
+                          height: 160,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.white,
@@ -97,19 +98,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                   fit: BoxFit.cover)),
                         ),
                         SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          // margin: const EdgeInsets.only(right: 50),
-                          width: 270,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage("img/card-box-basics-1.png"),
-                                  fit: BoxFit.cover)),
+                          height: 20,
                         ),
                       ],
                     ),
