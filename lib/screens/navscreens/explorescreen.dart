@@ -24,7 +24,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
-        // Um das Scrollen zu ermöglichen
+        // Scrollen zu ermöglichen
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,9 +43,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       child: Container(
                         height: 60,
                         width: 30,
-                        // Stellen Sie sicher, dass das Bild im angegebenen Pfad existiert
-                        child: Image.asset(
-                            "img/icons/search.png"), // Pfad ggf. anpassen
+                        child: Image.asset("img/icons/search.png"),
                       ),
                     ),
                     Expanded(
