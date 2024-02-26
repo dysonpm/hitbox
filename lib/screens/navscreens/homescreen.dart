@@ -72,9 +72,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.grey,
                 isScrollable: true,
-                indicatorColor: Colors.black, // Farbe für den ausgewählten Tab
-                indicatorWeight:
-                    5, // Dicke der Linie unter dem ausgewählten Tab
+                indicatorColor: Colors.black,
+                indicatorWeight: 5,
+                // Dicke der Linie unter dem ausgewählten Tab
                 indicatorSize: TabBarIndicatorSize.label,
                 tabs: [
                   Tab(text: "Beginner"),
@@ -87,37 +87,42 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           SizedBox(
             height: 10,
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 20),
-            height: 300,
-            width: double.maxFinite,
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                ListView.builder(
-                  itemCount: 3,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: const EdgeInsets.only(
-                        right: 15,
-                        top: 10,
-                      ),
-                      width: 200,
-                      height: 300,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                        image: DecorationImage(
-                            image: AssetImage("img/" + imagesbasics[index]),
-                            fit: BoxFit.cover),
-                      ),
-                    );
-                  },
-                ),
-                Text("2"),
-                Text("3"),
-              ],
+          InkWell(
+            onTap: () {
+              print("hallo");
+            },
+            child: Container(
+              padding: const EdgeInsets.only(left: 20),
+              height: 300,
+              width: double.maxFinite,
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  ListView.builder(
+                    itemCount: 3,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        margin: const EdgeInsets.only(
+                          right: 15,
+                          top: 10,
+                        ),
+                        width: 200,
+                        height: 300,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage("img/" + imagesbasics[index]),
+                              fit: BoxFit.cover),
+                        ),
+                      );
+                    },
+                  ),
+                  Text("2"),
+                  Text("3"),
+                ],
+              ),
             ),
           ),
           SizedBox(
