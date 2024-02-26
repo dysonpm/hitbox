@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:hitbox_main/introscreens/introscreen1.dart';
 import 'package:hitbox_main/introscreens/introscreen2.dart';
 import 'package:hitbox_main/introscreens/introscreen3.dart';
