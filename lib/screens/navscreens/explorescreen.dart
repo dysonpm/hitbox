@@ -1,5 +1,5 @@
-import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // Import für GoogleFonts hinzugefügt
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -9,103 +9,122 @@ class ExploreScreen extends StatefulWidget {
 }
 
 class _ExploreScreenState extends State<ExploreScreen> {
-  int tag = 1;
-  List<String> tags = [];
-  List<String> options = [
+  List<String> list = [
     "Basics",
-    "Comnbinations",
+    "Combinations",
     "Power Punches",
     "Footwork",
+    "Speed",
   ];
+
+  int current = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 70),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Container(
-                      height: 60,
-                      width: 30,
-                      child: Image.asset("img/icons/search.png"),
-                    ),
-                  ),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Search",
+      body: SingleChildScrollView(
+        // Um das Scrollen zu ermöglichen
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 70),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Container(
+                        height: 60,
+                        width: 30,
+                        // Stellen Sie sicher, dass das Bild im angegebenen Pfad existiert
+                        child: Image.asset(
+                            "img/icons/search.png"), // Pfad ggf. anpassen
                       ),
                     ),
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Search",
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(20),
+              width: double.infinity,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 60,
+                    child: ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: list.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  current = index;
+                                });
+                              },
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 300),
+                                margin: const EdgeInsets.all(5),
+                                width: 115,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  color: current == index
+                                      ? Colors.black
+                                      : Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    list[index],
+                                    style: GoogleFonts.spaceGrotesk(
+                                      fontWeight: FontWeight.bold,
+                                      color: current == index
+                                          ? Colors.white
+                                          : Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
                   ),
+
+                  // Main Body
+                  Container(
+                    margin: const EdgeInsets.only(top: 30),
+                    width: double.infinity,
+                    height: 550,
+                    child: Column(
+                      children: [],
+                    ),
+                  )
                 ],
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: ChipsChoice.single(
-              value: tag,
-              onChanged: (val) => setState(() => tag = val),
-              choiceItems: C2Choice.listFrom(
-                source: options,
-                value: (i, v) => i,
-                label: (i, v) => v,
-              ),
-              choiceStyle: const C2ChipStyle(
-                iconColor: Colors.red,
-                backgroundColor: Colors.black,
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-              ),
-            ),
-          ),
-          Container(
-            height: 630,
-            width: double.maxFinite,
-            margin: const EdgeInsets.only(left: 20),
-            child: ListView.builder(
-                itemCount: 4,
-                scrollDirection: Axis.vertical,
-                itemBuilder: (_, index) {
-                  return Container(
-                    margin: const EdgeInsets.only(
-                      right: 20,
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          // margin: const EdgeInsets.only(right: 50),
-                          width: 390,
-                          height: 160,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage("img/card-box-basics-1.png"),
-                                  fit: BoxFit.cover)),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

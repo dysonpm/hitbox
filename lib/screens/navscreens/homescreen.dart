@@ -67,18 +67,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             child: Align(
               alignment: Alignment.centerLeft,
               child: TabBar(
-                  labelPadding: const EdgeInsets.only(left: 20, right: 20),
-                  controller: _tabController,
-                  labelColor: Colors.black,
-                  unselectedLabelColor: Colors.grey,
-                  isScrollable: true,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicator: CircleTabIndicator(color: Colors.black, radius: 4),
-                  tabs: [
-                    Tab(text: "Beginner"),
-                    Tab(text: "Intermediate"),
-                    Tab(text: "Advanced"),
-                  ]),
+                labelPadding: const EdgeInsets.only(left: 20, right: 20),
+                controller: _tabController,
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.grey,
+                isScrollable: true,
+                indicatorColor: Colors.black, // Farbe für den ausgewählten Tab
+                indicatorWeight:
+                    5, // Dicke der Linie unter dem ausgewählten Tab
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: [
+                  Tab(text: "Beginner"),
+                  Tab(text: "Intermediate"),
+                  Tab(text: "Advanced"),
+                ],
+              ),
             ),
           ),
           SizedBox(
@@ -171,35 +174,5 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ],
       ),
     );
-  }
-}
-
-class CircleTabIndicator extends Decoration {
-  final Color color;
-  double radius;
-  CircleTabIndicator({required this.color, required this.radius});
-
-  @override
-  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    // TODO: implement createBoxPainter
-    return _CirclePainter(color: color, radius: radius);
-  }
-}
-
-class _CirclePainter extends BoxPainter {
-  final Color color;
-  double radius;
-  _CirclePainter({required this.color, required this.radius});
-
-  @override
-  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    Paint _paint = Paint();
-    _paint.color = color;
-    _paint.isAntiAlias = true;
-    final Offset circleOffset = Offset(
-        configuration.size!.width / 2 - radius / 2,
-        configuration.size!.height - radius);
-
-    canvas.drawCircle(offset + circleOffset, radius, _paint);
   }
 }
