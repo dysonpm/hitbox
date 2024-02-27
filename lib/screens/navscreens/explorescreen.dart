@@ -110,14 +110,42 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
 
                   // Main Body
+
                   Container(
-                    margin: const EdgeInsets.only(top: 30),
-                    width: double.infinity,
-                    height: 550,
-                    child: Column(
-                      children: [],
-                    ),
-                  )
+                    alignment: Alignment.topCenter,
+                    height: 680,
+                    width: double.maxFinite,
+                    margin: const EdgeInsets.only(left: 20),
+                    child: ListView.builder(
+                        itemCount: 4,
+                        scrollDirection: Axis.vertical,
+                        itemBuilder: (_, index) {
+                          return Container(
+                            color: Colors.green,
+                            margin: const EdgeInsets.only(
+                              right: 20,
+                            ),
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 390,
+                                  height: 160,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white,
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "img/card-box-basics-1.png"),
+                                          fit: BoxFit.cover)),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                              ],
+                            ),
+                          );
+                        }),
+                  ),
                 ],
               ),
             ),
